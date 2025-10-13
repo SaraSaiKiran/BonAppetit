@@ -30,7 +30,8 @@ body {
 /* ===== Layout ===== */
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px; 
+  margin: 0 auto;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -44,22 +45,21 @@ body {
   align-items: center;
   justify-content: center;
   gap: 60px;
-  /* ✅ Keep desktop side-by-side */
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; 
   margin-bottom: 2rem;
-  overflow: hidden; /* prevents horizontal scroll */
+  overflow: hidden;
 }
 
 /* ===== Logo & Brandmark ===== */
 .logo img {
-  width: clamp(550px, 55vw, 720px);
+  width: 520px; 
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 .brandmark img {
-  width: clamp(400px, 45vw, 580px);
+  width: 380px; 
   max-width: 100%;
   height: auto;
   display: block;
@@ -74,7 +74,7 @@ body {
 .tagline {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
-  font-size: clamp(2.6rem, 3vw, 3.4rem);
+  font-size: 3rem; /* ✅ Fixed font size */
   letter-spacing: -0.01em;
   line-height: 1em;
   margin: 0.4rem 0;
@@ -85,7 +85,7 @@ body {
 .coming {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
-  font-size: clamp(2.6rem, 3vw, 3.4rem);
+  font-size: 3rem; /* ✅ Fixed font size */
   letter-spacing: -0.01em;
   line-height: 1em;
   margin: 0.4rem 0;
@@ -109,11 +109,30 @@ body {
   }
 
   .logo img {
-    width: clamp(420px, 85vw, 560px);
+    width: 400px; /* ✅ smaller for tablet */
   }
 
   .brandmark img {
-    width: clamp(340px, 80vw, 480px);
+    width: 320px;
+  }
+
+  .tagline {
+    font-size: 2rem;
+  }
+
+  .coming {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 480px) {
+  .logo img {
+    width: 340px;
+  }
+
+  .brandmark img {
+    width: 280px;
   }
 
   .tagline {
@@ -122,24 +141,5 @@ body {
 
   .coming {
     font-size: 1.3rem;
-  }
-}
-
-/* ===== Responsive (Mobile) ===== */
-@media (max-width: 480px) {
-  .logo img {
-    width: clamp(360px, 90vw, 500px);
-  }
-
-  .brandmark img {
-    width: clamp(300px, 88vw, 420px);
-  }
-
-  .tagline {
-    font-size: 1.4rem;
-  }
-
-  .coming {
-    font-size: 1.2rem;
   }
 }
