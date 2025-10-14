@@ -40,29 +40,31 @@ body {
   min-height: 100vh;
 }
 
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
-  flex-wrap: nowrap; 
   margin-bottom: 2rem;
   overflow: hidden;
+  width: 100vw; 
+  text-align: center;
 }
 
-/* ===== Logo & Brandmark ===== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .logo img {
-  width: 520px; 
+  width: 520px;
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-.brandmark img {
-  width: 380px; 
-  max-width: 100%;
-  height: auto;
-  display: block;
+  margin-inline: auto; 
 }
 
 /* ===== Text Section ===== */
@@ -74,72 +76,42 @@ body {
 .tagline {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
-  font-size: 3rem; /* ✅ Fixed font size */
+  font-size: 3rem;
   letter-spacing: -0.01em;
   line-height: 1em;
   margin: 0.4rem 0;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
-}
-
-.coming {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  font-size: 3rem; /* ✅ Fixed font size */
-  letter-spacing: -0.01em;
-  line-height: 1em;
-  margin: 0.4rem 0;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ✅ Allow wrapping ONLY below desktop breakpoint */
-@media (max-width: 768px) {
-  .hero {
-    flex-wrap: wrap;
-  }
 }
 
 /* ===== Responsive (Tablet) ===== */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 1.5rem;
+    width: 100vw; 
   }
 
   .logo img {
-    width: 400px; /* ✅ smaller for tablet */
-  }
-
-  .brandmark img {
-    width: 320px;
+    width: 400px;
+    margin-inline: auto; 
   }
 
   .tagline {
     font-size: 2rem;
   }
-
-  .coming {
-    font-size: 1.6rem;
-  }
 }
 
 /* ===== Responsive (Mobile) ===== */
 @media (max-width: 480px) {
-  .logo img {
-    width: 340px;
+  .hero {
+    width: 100vw; 
   }
 
-  .brandmark img {
-    width: 280px;
+  .logo img {
+    width: 340px;
+    margin-inline: auto; 
   }
 
   .tagline {
     font-size: 1.6rem;
-  }
-
-  .coming {
-    font-size: 1.3rem;
   }
 }
